@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object</title>
+</head>
+<body>
+    <script>
+    var annabelleMovie = {
+            title: "Annabelle",
+            rating: 2.4,
+            during: 2,
+            durationType: "Hours",
+            casts: ["Khushi", "Shreya"],
+            genre: ["Horror","Thriller","Comedy"],
+            trending: false,
+        };
+
+        Object.freeze(annabelleMovie)
+
+
+        //Access object
+        console.log(annabelleMovie.casts)
+        console.log(annabelleMovie.genre)
+        console.log(annabelleMovie['rating']);
+
+
+//Manupulate object
+        annabelleMovie.rating = 4;
+
+        console.log(annabelleMovie.rating);
+        
+
+//delete
+        delete annabelleMovie.trending;
+        console.log(annabelleMovie)
+
+
+        var productDetail = {
+            name: "",
+            rating: 0,
+            price: 0,
+            img: "",
+            discount: 0
+        }
+
+//Array of Object
+        var products = [productDetail,]
+
+//example
+        var studentTechpaathshala = {
+             name: "Glenisha",
+            phn_no: 1234567890,
+            add:"Thane",
+            class: "Sy",
+            course:"Reactjs"
+            
+        }; 
+        console.log(studentTechpaathshala)
+        console.log(studentTechpaathshala.class)
+        console.log(studentTechpaathshala.course)
+        console.log(studentTechpaathshala.name)
+        </script>
+</body>
+</html>
