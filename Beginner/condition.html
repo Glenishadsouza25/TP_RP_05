@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condition</title>
+  </head>
+  <body>
+    <script>
+      var username;
+      var password;
+      var marks = 20;
+      var username = "";
+      var password = "";
+      var marks = 34;
+      var criteriaPassing = 35;
+      var distinction = 75;
+      
+      console.log("password length should be greater than 8");
+
+      if (marks >= criteriaPassing) {
+        console.log("pass");
+      } else {
+        console.log("fail");
+      }
+      if (marks >= distinction) {
+        console.log("passed with distinction");
+      } else if (marks >= criteriaPassing) {
+        console.log("passed");
+      } else {
+        console.log("failed");
+      }
+    </script>
+  </body>
+</html>
