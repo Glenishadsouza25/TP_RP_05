@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfume Product</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: lightpink;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 20px;
+      }
+
+      .image img {
+        width: 200px;
+        height: 325px;
+        margin-right: 20px;
+      }
+
+      .product-info {
+        margin-right: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: normal;
+        margin: 10px 0;
+      }
+
+      p {
+        font-size: 10.9px;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 30px;
+        color: green;
+      }
+
+      .strike-through {
+        font-size: 24px; 
+        color: black;
+        text-decoration: line-through;
+      }
+
+      .add-to-cart {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img
+          src="https://geparlys.com/cdn/shop/files/MISS-Photo-Prestige_1_600x.jpg?v=1712760025"
+        />
+      </div>
+      <div class="product-info">
+        <h1><b>PERFUME</b></h1>
+        <h2><i>Miss Eau De Parfum</i></h2>
+        <p>
+          Miss Eau De Parfum is a contemporary fragrance that captures <br />
+          the essence of elegance and sophistication. With a meticulous<br />
+          blend of exquisite ingredients, Johan.B creates unique and <br />
+          captivating scents that leave a lasting impression. Each <br />
+          fragrance tells a story, evoking emotions and memories <br />
+          through carefully crafted notes. The Miss Eau De Parfum <br />
+          features a delightful combination of floral, fruity, <br />
+          and woody accords, making it a delightful choice for those <br />
+          seeking a modern and memorable scent
+        </p>
+        <p class="price"><b>$149.99</b> <span class="strike-through">$169.99</span></p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </body>
+</html>
