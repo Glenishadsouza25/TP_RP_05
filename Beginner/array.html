@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array Operations</h1>
+    
+    <script>
+        // Function to display length of the array
+        function displayLength(arr) {
+            console.log("Length of the array:", arr.length);
+        }
+
+        // Function to remove duplicates from an array
+        function removeDuplicates(arr) {
+            const uniqueSet = new Set(arr);
+            return Array.from(uniqueSet);
+        }
+        // Function to find the maximum value in an array
+        function findMaxValue(arr) {
+            if (arr.length === 0) {
+                return "Array is empty.";
+            }
+
+            let max = arr[0]; // Initialize max with the first element
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i]; // Update max if a larger value is found
+                }
+            }
+
+            return max;
+        }
+        // Function to find index of any value
+        function findIndex(arr, value) {
+             const index = arr.indexOf(value);
+             return index !== -1 ? `Index of ${value}: ${index}` : `${value} not found in the array.`;
+        }
+            // Main function
+            function main() {
+            // Creating an array
+            const myArray = [20, 30, 40, 50, 60];
+            
+            console.log(myArray);
+            // Printing length of the array in main
+            console.log("Length of the array in console:", myArray.length);
+
+            // Displaying length using function
+            displayLength(myArray);
+
+            // Printing array in reverse
+            console.log("Array in reverse:", myArray.slice().reverse());
+            
+            //Access last value
+            console.log(myArray.length-1);
+
+            // Access last value
+            console.log("Last value of the array:", myArray[myArray.length - 1]);
+            
+            // Finding the maximum value in myArray
+            const maxValue = findMaxValue(myArray);
+            console.log("Maximum value in myArray:", maxValue);
+            
+            // Finding the index of any value
+            const searchValue = 40;
+            console.log(findIndex(myArray, searchValue));
+
+            // Creating another array with duplicates
+            const anotherArray = [10, 20, 30, 20, 40, 10, 50];
+            const result = removeDuplicates(anotherArray);
+            console.log("Original array with duplicates:", anotherArray);
+            console.log("Array with duplicates removed:", result);
+        }
+
+        // Calling the main function
+        main();
+    </script>
+</body>
+</html>
+
