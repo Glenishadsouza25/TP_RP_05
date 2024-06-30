@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+    <body style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: 
+                center; background-color: rgb(255, 255, 255);">
+                
+                <div class="container">
+                    <div class="calculator" style="border:2px solid black; padding: 20px;box-sizing: border-box; border-radius: 16px; box-shadow:5px 5px #3a4452;">
+                        <input type="text" id="inputBox" placeholder="0" style="width: 277px; border: none; box-shadow: 0px 0px 10px rgbs(0, 0, 0, 0.3); padding: 24px; margin: 10px; background:rgba(54, 255,255,0.351); font-size: 40px; text-align: right; color: black;">
+                        <div>
+                            <button class="button operator" onclick="clearInput()" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%; background-color: aliceblue; font-size: 25px;box-shadow:2px 1px #3a4452;color:black;">AC</button>
+                            <button class="button operator" onclick="deleteLast()" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%; background-color: aliceblue; font-size: 25px;box-shadow:2px 1px #3a4452;color: black;">DEL</button>
+                            <button class="button operator" onclick="Input('%')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; font-size: 25px;box-shadow:2px 1px #3a4452;color:black; ">%</button>
+                            <button class="button operator" onclick="Input('/')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%; background-color:aliceblue; font-size: 25px;box-shadow:2px 1px #3a4452;color:black; ">/</button>
+                        </div>
+                        <div>
+                            <button class="button" onclick="Input('7')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">7</button>
+                            <button class="button"onclick="Input('8')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">8</button>
+                            <button class="button"onclick="Input('9')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">9</button>
+                            <button class="button operator" onclick="Input('*')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%; background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452;font-size: 25px;">*</button>
+                        </div>
+                        <div>
+                            <button class="button" onclick="Input('4')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">4</button>
+                            <button class="button" onclick="Input('5')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">5</button>
+                            <button class="button" onclick="Input('6')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">6</button>
+                            <button class="button operator" onclick="Input('-')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px;">-</button>
+                        </div>
+                        <div>
+                            <button class="button" onclick="Input('1')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">1</button>
+                            <button class="button" onclick="Input('2')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">2</button>
+                            <button class="button" onclick="Input('3')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">3</button>
+                            <button class="button operator" onclick="Input('+')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">+</button>
+                        </div>
+                        <div>
+                            <button class="button" onclick="Input('00')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">00</button>
+                            <button class="button" onclick="Input('0')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452; font-size: 25px; ">0</button>
+                            <button class="button" onclick="Input('.')" style="border: none; width: 60px; height: 60px; margin: 10px; border-radius: 50%;background-color:aliceblue;color: black;box-shadow:2px 1px #3a4452; font-size: 25px;">.</button>
+                            <button class="button equalBtn" onclick="calculate()" style="border: none; width: 60px; height: 60px; margin: 10px;border-radius: 50%; background-color: aliceblue; color: black;box-shadow:2px 1px #3a4452; font-size: 20px; ">=</button>  
+                        </div>
+                       <div>
+                        <button class="button operator" onclick="clearInput()" style="border: none; width: 310px; height: 60px; margin: 10px; background-color: aliceblue; color: black;box-shadow:2px 2px 2px 2px #3a4452; font-size: 20px; ">CANCEL</button>  
+                </div>
+            
+                <script>
+                    function Input(value) {
+                        document.getElementById('inputBox').value += value;
+                    }
+            
+                    function clearInput() {
+                        document.getElementById('inputBox').value = '';
+                    }
+            
+                    function deleteLast() {
+                        let currentValue = document.getElementById('inputBox').value;
+                        document.getElementById('inputBox').value = currentValue.slice(0, -1);
+                    } 
+                    function calculate(){
+                        let expression=document.getElementById('inputBox').value;
+                        let result=eval(expression);
+                        document.getElementById('inputBox').value=result;
+                    } 
+                </script>
+        
+</body>
+</html>
