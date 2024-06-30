@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+//Addition
+    function add(value1,value2){
+        console.log(value1 + value2);
+    }
+    add (10,20)
+ 
+//Subtraction
+    function sub(value1,value2){
+    console.log(value1 - value2);
+    }
+    sub (20,20)
+
+//Division
+    function div(value1,value2){
+    console.log(value1 / value2);
+    }
+    
+    div (10,20)
+
+//Modulus
+    function mod(value1,value2){
+    console.log(value1 % value2);
+    }
+    mod (10,20)
+
+//Area of rectangle
+    function calculateRectangleArea(length, height) {
+    const area = length * height;
+    return area;
+}
+
+    const rectangleLength = 10;
+    const rectangleHeight = 5;
+    const areaOfRectangle = calculateRectangleArea(rectangleLength, rectangleHeight);
+
+    console.log(`The area of the rectangle with length ${rectangleLength} and width ${rectangleHeight} is ${areaOfRectangle}.`);
+
+</script>
+</body>
+</html>
