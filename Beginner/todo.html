@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+            margin: 0; 
+            background-color: whitesmoke; 
+        }
+
+        .todo {
+            width: 300px;
+            padding: 20px;
+            background-color: linen;
+            border: 1px solid black;
+            box-shadow: 0 2px 4px black;
+        }
+
+        #task {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid black;
+        }
+
+        #addButton {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #clearButton {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .taskContainer {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .taskText {
+            margin-bottom: 10px;
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .completeButton,
+        .deleteButton {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .deleteButton {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo">
+        <h1>TODO LIST!!!</h1>
+        <input id="task" placeholder="Enter task" />
+        <div class="buttonContainer">
+            <button id="addButton" onclick="addTask()">Add Task</button>
+            <button id="clearButton" onclick="clearTask()">Clear</button>
+        </div>
+    </div>
+    <div>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        var count = 0;
+
+        function addTask() {
+            var task = document.getElementById("task").value;
+            var taskList = document.getElementById('taskList');
+            var taskId = `list-${count}`;
+            taskList.innerHTML += `
+                <div class="taskContainer">
+                    <div class="taskText" id="${taskId}">${task}</div>
+                    <div>
+                        <button class="completeButton" onclick="completeTask('${taskId}')">Complete</button>
+                        <button class="deleteButton" onclick="deleteTask('${taskId}')">Delete</button>
+                    </div>
+                </div>
+            `;
+            count += 1;
+        }
+
+        function completeTask(id) {
+            var task = document.getElementById(id);
+            task.style.textDecoration = 'line-through';
+        }
+
+        function deleteTask(id) {
+            var task = document.getElementById(id);
+            task.parentNode.remove();
+        }
+
+        function clearTask() {
+            document.getElementById("task").value = "";
+        }
+    </script>
+</body>
+</html>
